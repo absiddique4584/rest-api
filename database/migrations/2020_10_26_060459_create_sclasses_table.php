@@ -15,6 +15,7 @@ class CreateSclassesTable extends Migration
     {
         Schema::create('sclasses', function (Blueprint $table) {
             $table->id();
+            $table->string('class_name');
             $table->timestamps();
         });
     }
