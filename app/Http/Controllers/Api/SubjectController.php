@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Subject;
 use Illuminate\Http\Request;
-
+use DB;
 class SubjectController extends Controller
 {
     /**
@@ -15,7 +15,8 @@ class SubjectController extends Controller
      */
     public function index()
     {
-        //
+        $subject = Subject::all();
+        return response()->json($subject);
     }
 
 
@@ -46,7 +47,8 @@ class SubjectController extends Controller
      */
     public function show($id)
     {
-        //
+        $show =DB::table('subjects')->where('id',$id)->first();
+        return response()->json($show);
     }
 
 
@@ -59,7 +61,18 @@ class SubjectController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validateData =$request->validate([
+            'class_id' =>  'required',
+            'subject_name' =>  'required|unique:subjects|max:25',
+        ]);
+
+
+        $data = array();
+        $data['class_id'] = $request->class_id;
+        $data['subject_name'] = $request->subject_name;
+        $data['subject_code'] = $request->subject_code;
+        $insert = DB::table('subjects')->where('id',$id)->update($data);
+        return response('Data Updated Successfully ! ');
     }
 
     /**
@@ -70,6 +83,7 @@ class SubjectController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('subjects')->where('id',$id)->delete();
+        return response('Yah! Deleted Successfully !');
     }
 }

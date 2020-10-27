@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a826d61-739c-465a-ad24-16415c31df04" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/SubjectController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Subject.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_27_063316_create_subjects_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/SclassController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/SclassController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/SubjectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/SubjectController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,6 +162,7 @@
       <workItem from="1603721236957" duration="1759000" />
       <workItem from="1603768413514" duration="2131000" />
       <workItem from="1603778589667" duration="3612000" />
+      <workItem from="1603810628718" duration="1939000" />
     </task>
     <servers />
   </component>
