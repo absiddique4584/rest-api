@@ -56,19 +56,10 @@ class SclassController extends Controller
      */
     public function show($id)
     {
-        //
+        $show =DB::table('sclasses')->where('id',$id)->first();
+        return response()->json($show);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
@@ -79,7 +70,15 @@ class SclassController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validateData =$request->validate([
+            'class_name' =>  'required|unique:sclasses|max:25'
+        ]);
+
+
+        $data = array();
+        $data['class_name'] = $request->class_name;
+        $insert = DB::table('sclasses')->where('id',$id)->update($data);
+        return response('Data Updated Successfully ! ');
     }
 
     /**
@@ -90,6 +89,7 @@ class SclassController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('sclasses')->where('id',$id)->delete();
+        return response('Yah! Deleted Successfully !');
     }
 }
