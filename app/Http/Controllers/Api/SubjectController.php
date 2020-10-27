@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Subject;
 use Illuminate\Http\Request;
-use DB;
-class SclassController extends Controller
+
+class SubjectController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +15,9 @@ class SclassController extends Controller
      */
     public function index()
     {
-        $sclass = DB::table('sclasses')->get();
-        return response()->json($sclass);
+        //
     }
+
 
 
     /**
@@ -28,15 +29,13 @@ class SclassController extends Controller
     public function store(Request $request)
     {
         $validateData =$request->validate([
-           'class_name' =>  'required|unique:sclasses|max:25'
+            'class_id' =>  'required',
+            'subject_name' =>  'required|unique:subjects|max:25',
         ]);
 
 
-        $data = array();
-        $data['class_name'] = $request->class_name;
-        $insert = DB::table('sclasses')->insert($data);
+        $subject = Subject::create($request->all());
         return response('Data Inserted Successfully ! ');
-
     }
 
     /**
@@ -47,8 +46,7 @@ class SclassController extends Controller
      */
     public function show($id)
     {
-        $show =DB::table('sclasses')->where('id',$id)->first();
-        return response()->json($show);
+        //
     }
 
 
@@ -61,15 +59,7 @@ class SclassController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $validateData =$request->validate([
-            'class_name' =>  'required|unique:sclasses|max:25'
-        ]);
-
-
-        $data = array();
-        $data['class_name'] = $request->class_name;
-        $insert = DB::table('sclasses')->where('id',$id)->update($data);
-        return response('Data Updated Successfully ! ');
+        //
     }
 
     /**
@@ -80,7 +70,6 @@ class SclassController extends Controller
      */
     public function destroy($id)
     {
-        DB::table('sclasses')->where('id',$id)->delete();
-        return response('Yah! Deleted Successfully !');
+        //
     }
 }
