@@ -3,11 +3,12 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Subject;
 use Illuminate\Http\Request;
-use DB;
-class SubjectController extends Controller
+use App\Models\Section;
+
+class SectionController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -15,8 +16,8 @@ class SubjectController extends Controller
      */
     public function index()
     {
-        $subject = Subject::all();
-        return response()->json($subject);
+        $section = Section::all();
+        return response()->json($section);
     }
 
 
@@ -31,11 +32,11 @@ class SubjectController extends Controller
     {
         $validateData =$request->validate([
             'class_id' =>  'required',
-            'subject_name' =>  'required|unique:subjects|max:25',
+            'section_name' =>  'required|unique:sections|max:25',
         ]);
 
 
-        $subject = Subject::create($request->all());
+        $section = Section::create($request->all());
         return response('Data Inserted Successfully ! ');
     }
 
@@ -47,7 +48,7 @@ class SubjectController extends Controller
      */
     public function show($id)
     {
-        $show =Subject::findorfail($id);
+        $show =Section::findorfail($id);
         return response()->json($show);
     }
 
@@ -62,8 +63,8 @@ class SubjectController extends Controller
     public function update(Request $request, $id)
     {
 
-        $subject =Subject::findorfail($id);
-        $subject->update($request->all());
+        $section =Section::findorfail($id);
+        $section->update($request->all());
         return response('Data Updated Successfully ! ');
     }
 
@@ -75,7 +76,9 @@ class SubjectController extends Controller
      */
     public function destroy($id)
     {
-        Subject::where('id',$id)->delete();
+        Section::where('id',$id)->delete();
         return response('Yah! Deleted Successfully !');
     }
 }
+
+
