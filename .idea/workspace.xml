@@ -88,7 +88,6 @@
       <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
       <path value="$PROJECT_DIR$/vendor/hamcrest/hamcrest-php" />
       <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
-      <path value="$PROJECT_DIR$/vendor/scrivo/highlight.php" />
       <path value="$PROJECT_DIR$/vendor/phar-io/version" />
       <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
@@ -126,6 +125,9 @@
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
       <path value="$PROJECT_DIR$/vendor/nunomaduro/collision" />
       <path value="$PROJECT_DIR$/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/vendor/tymon/jwt-auth" />
+      <path value="$PROJECT_DIR$/vendor/namshi/jose" />
     </include_path>
   </component>
   <component name="ProjectId" id="1jP57NULHAJDWBGlfAlz8kn8g3V" />
@@ -172,6 +174,12 @@
       <workItem from="1603810628718" duration="1939000" />
       <workItem from="1603955378963" duration="2595000" />
       <workItem from="1603967254574" duration="7279000" />
+      <workItem from="1604021308637" duration="796000" />
+      <workItem from="1604024280440" duration="770000" />
+      <workItem from="1604048922146" duration="1227000" />
+      <workItem from="1604050313785" duration="136000" />
+      <workItem from="1604293439089" duration="4402000" />
+      <workItem from="1604309095780" duration="2612000" />
     </task>
     <servers />
   </component>
